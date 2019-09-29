@@ -9,13 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".OrderStatusActivity" />
+        <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".CheckOutActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".ProductListActivity" />
+        <activity android:name=".BannedProductListActivity" />
+        <activity android:name=".BannedProductDetailActivity" />
+        <activity android:name=".HolderListActivity" />
+        <activity android:name=".HolderDetailActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SignInActivity" />
+
     </application>
 
 </manifest>

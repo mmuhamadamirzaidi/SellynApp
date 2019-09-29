@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_spa_drawer_24dp"
+            android:title="Products" />
+        <item
+            android:id="@+id/nav_holders"
+            android:icon="@drawable/ic_location_city_drawer_24dp"
+            android:title="Holders" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_shopping_basket_drawer_24dp"
+            android:title="Cart" />
+        <item
+            android:id="@+id/nav_order_status"
+            android:icon="@drawable/ic_timelapse_drawer_24dp"
+            android:title="Order Status" />
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@drawable/ic_book_drawer_24dp"
+            android:title="Wishlist" />
+        <item
+            android:id="@+id/banned_products"
+            android:icon="@drawable/ic_error_drawer_24dp"
+            android:title="Banned Products" />
+        <item
+            android:id="@+id/news"
+            android:icon="@drawable/ic_public_drawer_24dp"
+            android:title="News" />
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_person_drawer_24dp"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_drawer_24dp"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_send_drawer_24dp"
+            android:title="Sign Out" />
+    </group>
+
+</menu>

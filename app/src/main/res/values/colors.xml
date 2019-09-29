@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    //Main
+    <color name="colorPrimary">#2C6634</color>
+    <color name="colorPrimaryDark">#24562B</color>
+    <color name="colorAccent">#24562B</color>
+
+    //Background
+    <color name="backgroundApp">#f4f4f4</color>
+
+    //Button
+    <color name="colorTransparent">#00000000</color>
+    <color name="disable">#DDDDDD</color>
+
+    //Text
+    <color name="textColorPrimaryDark">#2c2c2c</color>
+    <color name="textColorPrimary">#4b4b4c</color>
+    <color name="textColorAccent">#808080</color> //Use for drawer menu
+
+    //Icon Drawer
+    <color name="iconDrawerColor">#737373</color>
+
+    //Recycler
+<!--    <color name="defaultColor">#f4f4f4</color>-->
+<!--    <color name="onclick">#80b9d6</color>-->
+<!--    <color name="booked">#fabf2f</color>-->
+
+    //Order Status
+    <color name="delivered">#10800C</color>
+    <color name="shipped">#E4921F</color>
+    <color name="cancelled">#941512</color>
+
+    //Others
+    <color name="white">#ffffff</color>
 </resources>
