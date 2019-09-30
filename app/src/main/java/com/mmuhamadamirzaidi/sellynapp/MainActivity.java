@@ -189,18 +189,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_products) {
+        if (id == R.id.nav_home) {
 
-            Intent menuIntent = new Intent(MainActivity.this, ProductListActivity.class);
+            Intent menuIntent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_holders) {
-
-//            Toast.makeText(MainActivity.this, "Holders", Toast.LENGTH_SHORT).show();
-            Intent holderIntent = new Intent(MainActivity.this, HolderListActivity.class);
-            startActivity(holderIntent);
-
-        } else if (id == R.id.nav_cart) {
+        }
+//        else if (id == R.id.nav_holders) {
+//
+////            Toast.makeText(MainActivity.this, "Holders", Toast.LENGTH_SHORT).show();
+//            Intent holderIntent = new Intent(MainActivity.this, HolderListActivity.class);
+//            startActivity(holderIntent);
+//
+//        }
+        else if (id == R.id.nav_cart) {
 
             Intent menuIntent = new Intent(MainActivity.this, CartActivity.class);
             startActivity(menuIntent);
@@ -214,13 +216,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             Toast.makeText(MainActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 
-        }else if (id == R.id.banned_products) {
-
-//            Toast.makeText(MainActivity.this, "Banned Products", Toast.LENGTH_SHORT).show();
-            Intent bannedProductIntent = new Intent(MainActivity.this, BannedProductListActivity.class);
-            startActivity(bannedProductIntent);
-
-        }else if (id == R.id.news) {
+        }
+//        else if (id == R.id.banned_products) {
+//
+////            Toast.makeText(MainActivity.this, "Banned Products", Toast.LENGTH_SHORT).show();
+//            Intent bannedProductIntent = new Intent(MainActivity.this, BannedProductListActivity.class);
+//            startActivity(bannedProductIntent);
+//
+//        }
+        else if (id == R.id.news) {
 
             Toast.makeText(MainActivity.this, "News", Toast.LENGTH_SHORT).show();
 

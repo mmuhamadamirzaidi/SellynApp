@@ -124,7 +124,7 @@
                     android:layout_weight="10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About Fyne"/>
+                    android:text="About Sellyn"/>
 
             </LinearLayout>
 
@@ -218,7 +218,7 @@
             android:fontFamily="@font/mr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fyne version 1.0"/>
+            android:text="Sellyn version 1.0"/>
     </LinearLayout>
 
 </RelativeLayout>

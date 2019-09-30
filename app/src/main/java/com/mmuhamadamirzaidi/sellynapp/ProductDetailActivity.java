@@ -86,7 +86,7 @@ public class ProductDetailActivity extends AppCompatActivity implements RatingDi
         detail_total_review = (TextView) findViewById(R.id.detail_total_review);
 
 
-        detail_give_review = (TextView) findViewById(R.id.detail_give_review);
+//        detail_give_review = (TextView) findViewById(R.id.detail_give_review);
 
         detail_rating_bar = (RatingBar) findViewById(R.id.detail_rating_bar);
 
@@ -95,12 +95,12 @@ public class ProductDetailActivity extends AppCompatActivity implements RatingDi
         detail_product_fab_bookmark = (FloatingActionButton) findViewById(R.id.detail_product_fab_bookmark);
         detail_product_fab_cart = (FloatingActionButton) findViewById(R.id.detail_product_fab_cart);
 
-        detail_give_review.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showRatingDialog();
-            }
-        });
+//        detail_give_review.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showRatingDialog();
+//            }
+//        });
 
         detail_product_fab_cart.setOnClickListener(new View.OnClickListener() {
             @Override
