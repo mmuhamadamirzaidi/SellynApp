@@ -26,9 +26,9 @@ import io.paperdb.Paper;
 
 public class AccountActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView header_profile_image;
+    ImageView header_profile_image, account_profile_image;
 
-    TextView header_fullname, header_identity_card;
+    TextView header_fullname, header_identity_card, account_full_name, account_ic_number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,15 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+
+        account_full_name = (TextView) findViewById(R.id.account_full_name);
+        account_ic_number = (TextView) findViewById(R.id.account_ic_number);
+        account_profile_image = (ImageView) findViewById(R.id.account_profile_image);
+
+        account_full_name.setText(Common.currentUser.getUserName());
+        account_ic_number.setText(Common.currentUser.getUserIdentityCard());
+
+        Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(account_profile_image);
 
         // Set user informations
         View headerView = navigationView.getHeaderView(0);

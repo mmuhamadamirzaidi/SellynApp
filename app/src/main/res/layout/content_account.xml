@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/account_profile_image"
         android:layout_width="71dp"
         android:layout_height="71dp"
         android:layout_marginStart="16dp"
@@ -30,29 +30,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/studentemail"
+        android:id="@+id/account_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="37dp"
         android:textColor="#FFF"
         android:fontFamily="@font/mr"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/account_profile_image"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Muhamad Amir Bin Zaidi"/>
 
     <TextView
-        android:text="961022055555"
-        android:id="@+id/studentusername"
+        android:id="@+id/account_ic_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:fontFamily="@font/ml"
+        android:text="961022055555"
         android:textColor="#FFF"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/studentemail" />
+        app:layout_constraintBottom_toBottomOf="@+id/account_profile_image"
+        app:layout_constraintStart_toEndOf="@+id/account_profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/account_full_name" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/account_profile_image">
 
         <TextView
             android:id="@+id/mainmenus"
