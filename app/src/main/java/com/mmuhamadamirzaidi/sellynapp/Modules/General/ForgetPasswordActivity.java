@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.General;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -14,8 +14,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Model.User;
+import com.mmuhamadamirzaidi.sellynapp.R;
 
 import dmax.dialog.SpotsDialog;
 

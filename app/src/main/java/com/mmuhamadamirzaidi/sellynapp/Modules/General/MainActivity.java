@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.General;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,9 +24,15 @@ import android.widget.Toast;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.AccountActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.SettingActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Cart.CartActivity;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Interface.ItemClickListener;
 import com.mmuhamadamirzaidi.sellynapp.Model.Category;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Product.ProductListActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.OrderStatusActivity;
+import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CategoryViewHolder;
 import com.squareup.picasso.Picasso;
 
@@ -195,13 +201,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(menuIntent);
 
         }
-//        else if (id == R.id.nav_holders) {
-//
-////            Toast.makeText(MainActivity.this, "Holders", Toast.LENGTH_SHORT).show();
-//            Intent holderIntent = new Intent(MainActivity.this, HolderListActivity.class);
-//            startActivity(holderIntent);
-//
-//        }
         else if (id == R.id.nav_cart) {
 
             Intent menuIntent = new Intent(MainActivity.this, CartActivity.class);
@@ -217,20 +216,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(MainActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 
         }
-//        else if (id == R.id.banned_products) {
-//
-////            Toast.makeText(MainActivity.this, "Banned Products", Toast.LENGTH_SHORT).show();
-//            Intent bannedProductIntent = new Intent(MainActivity.this, BannedProductListActivity.class);
-//            startActivity(bannedProductIntent);
-//
-//        }
         else if (id == R.id.news) {
 
             Toast.makeText(MainActivity.this, "News", Toast.LENGTH_SHORT).show();
 
         }else if (id == R.id.nav_account) {
 
-            Toast.makeText(MainActivity.this, "Account", Toast.LENGTH_SHORT).show();
+            Intent accountIntent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivity(accountIntent);
 
         }else if (id == R.id.nav_settings) {
 

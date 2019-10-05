@@ -1,8 +1,12 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.Account;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.mmuhamadamirzaidi.sellynapp.R;
 
 public class OrderDetailActivity extends AppCompatActivity {
 
@@ -11,10 +15,21 @@ public class OrderDetailActivity extends AppCompatActivity {
 
     TextView order_detail_delivery_notes;
 
+    ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail);
+
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         order_detail_status = (TextView) findViewById(R.id.order_detail_status);
         order_detail_grand_total = (TextView) findViewById(R.id.order_detail_grand_total);

@@ -1,6 +1,5 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.General;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +7,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.mmuhamadamirzaidi.sellynapp.Common.Common;
-import com.mmuhamadamirzaidi.sellynapp.Model.User;
-
-import io.paperdb.Paper;
+import com.mmuhamadamirzaidi.sellynapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

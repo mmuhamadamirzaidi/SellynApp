@@ -1,8 +1,7 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.General;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Model.User;
+import com.mmuhamadamirzaidi.sellynapp.R;
 
 import dmax.dialog.SpotsDialog;
 import io.paperdb.Paper;

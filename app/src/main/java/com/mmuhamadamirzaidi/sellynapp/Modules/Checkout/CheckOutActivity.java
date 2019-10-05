@@ -1,10 +1,9 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.Checkout;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +15,8 @@ import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Database.Database;
 import com.mmuhamadamirzaidi.sellynapp.Model.Order;
 import com.mmuhamadamirzaidi.sellynapp.Model.OrderRequest;
+import com.mmuhamadamirzaidi.sellynapp.Modules.General.MainActivity;
+import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CartAdapter;
 
 import java.util.ArrayList;

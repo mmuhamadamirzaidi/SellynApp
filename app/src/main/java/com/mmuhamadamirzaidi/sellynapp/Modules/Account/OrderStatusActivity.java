@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.Account;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -15,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Interface.ItemClickListener;
 import com.mmuhamadamirzaidi.sellynapp.Model.OrderRequest;
+import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.OrderViewHolder;
 
 public class OrderStatusActivity extends AppCompatActivity {
@@ -27,6 +29,8 @@ public class OrderStatusActivity extends AppCompatActivity {
 
     FirebaseRecyclerAdapter<OrderRequest, OrderViewHolder> adapter;
 
+    ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +40,18 @@ public class OrderStatusActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Init Firebase
         database = FirebaseDatabase.getInstance();
         orderrequest = database.getReference("OrderRequest");
-
-
 
         // Load category
         recycler_order = (RecyclerView) findViewById(R.id.recycler_order);
@@ -50,8 +60,6 @@ public class OrderStatusActivity extends AppCompatActivity {
         recycler_order.setLayoutManager(layoutManager);
 
         loadOrder(Common.currentUser.getUserPhone());
-
-
     }
 
     private void loadOrder(String userPhone) {

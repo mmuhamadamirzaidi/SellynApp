@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductListActivity">
+    tools:context=".Modules.Product.ProductListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -33,17 +33,6 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
-<!--    <android.support.design.widget.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_margin="@dimen/fab_margin"-->
-<!--        app:borderWidth="0dp"-->
-<!--        android:elevation="0dp"-->
-<!--        android:backgroundTint="@color/colorPrimaryDark"-->
-<!--        app:srcCompat="@drawable/ic_shopping_basket_white_24dp"/>-->
 
     <include layout="@layout/content_product_list" />
 

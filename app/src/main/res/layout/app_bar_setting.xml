@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Modules.General.MainActivity">
+    tools:context=".Modules.Account.SettingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/category_toolbar"
+            android:id="@+id/setting_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -24,26 +24,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Category"
+                android:text="Settings"
                 android:layout_gravity="center"
                 android:textSize="20sp"
+                android:theme="@style/ToolbarTheme"
                 android:id="@+id/toolbar_title" />
 
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:borderWidth="0dp"
-        android:elevation="0dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_shopping_basket_white_24dp"/>
-
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_setting" />
 
 </android.support.design.widget.CoordinatorLayout>

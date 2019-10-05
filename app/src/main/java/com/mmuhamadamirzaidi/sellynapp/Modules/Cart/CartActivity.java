@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.Cart;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
@@ -24,8 +24,14 @@ import com.mmuhamadamirzaidi.sellynapp.Database.Database;
 import com.mmuhamadamirzaidi.sellynapp.Helper.RecyclerItemTouchHelper;
 import com.mmuhamadamirzaidi.sellynapp.Interface.RecyclerItemTouchHelperListener;
 import com.mmuhamadamirzaidi.sellynapp.Model.Order;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.AccountActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.SettingActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Checkout.CheckOutActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.General.MainActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.General.SignInActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.OrderStatusActivity;
+import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CartAdapter;
-import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CartViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
@@ -333,7 +339,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
 
         }else if (id == R.id.nav_account) {
 
-            Toast.makeText(CartActivity.this, "Account", Toast.LENGTH_SHORT).show();
+            Intent accountIntent = new Intent(CartActivity.this, AccountActivity.class);
+            startActivity(accountIntent);
 
         }else if (id == R.id.nav_settings) {
 

@@ -4,14 +4,6 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-<!--        <item-->
-<!--            android:id="@+id/nav_products"-->
-<!--            android:icon="@drawable/ic_spa_drawer_24dp"-->
-<!--            android:title="Products" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_holders"-->
-<!--            android:icon="@drawable/ic_location_city_drawer_24dp"-->
-<!--            android:title="Holders" />-->
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_location_city_drawer_24dp"
@@ -28,10 +20,6 @@
             android:id="@+id/nav_wishlist"
             android:icon="@drawable/ic_book_drawer_24dp"
             android:title="Wishlist" />
-<!--        <item-->
-<!--            android:id="@+id/banned_products"-->
-<!--            android:icon="@drawable/ic_error_drawer_24dp"-->
-<!--            android:title="Banned Products" />-->
         <item
             android:id="@+id/news"
             android:icon="@drawable/ic_public_drawer_24dp"

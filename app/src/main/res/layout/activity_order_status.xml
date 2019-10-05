@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderStatusActivity"
+    tools:context=".Modules.Account.OrderStatusActivity"
     android:background="@color/backgroundApp">
 
     <android.support.design.widget.AppBarLayout
@@ -22,6 +22,15 @@
             app:titleTextColor="@color/white"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
+            <ImageView
+                android:id="@+id/back"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_white_24dp"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,6 +40,14 @@
                 android:textSize="20sp"
                 android:theme="@style/ToolbarTheme"
                 android:id="@+id/toolbar_title" />
+
+<!--            <ImageView-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_arrow_forward_white_24dp"-->
+<!--                />-->
 
         </android.support.v7.widget.Toolbar>
 

@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.sellynapp;
+package com.mmuhamadamirzaidi.sellynapp.Modules.Product;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
@@ -27,12 +27,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Cart.CartActivity;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Database.Database;
 import com.mmuhamadamirzaidi.sellynapp.Interface.ItemClickListener;
-import com.mmuhamadamirzaidi.sellynapp.Model.Category;
+import com.mmuhamadamirzaidi.sellynapp.Modules.General.MainActivity;
 import com.mmuhamadamirzaidi.sellynapp.Model.Product;
-import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CategoryViewHolder;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.OrderStatusActivity;
+import com.mmuhamadamirzaidi.sellynapp.R;
+import com.mmuhamadamirzaidi.sellynapp.Modules.Account.SettingActivity;
+import com.mmuhamadamirzaidi.sellynapp.Modules.General.SignInActivity;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 
