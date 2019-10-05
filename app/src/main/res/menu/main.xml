@@ -2,10 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <item-->
-<!--        app:itemTextAppearance="@style/MonstserratMedium"-->
-<!--        android:id="@+id/refresh"-->
-<!--        android:icon="@drawable/ic_refresh_primary_dark_24dp"-->
-<!--        android:title="Refresh" />-->
+    <item
+        app:itemTextAppearance="@style/MonstserratMedium"
+        android:id="@+id/refresh"
+        android:icon="@drawable/ic_refresh_primary_dark_24dp"
+        android:title="Refresh"/>
+
+    <item
+        app:itemTextAppearance="@style/MonstserratMedium"
+        android:id="@+id/refreshs"
+        android:icon="@drawable/ic_bookmark_border_white_24dp"
+        android:title="Refresh Refresh" />
 
 </menu>
