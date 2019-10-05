@@ -1,15 +1,21 @@
 package com.mmuhamadamirzaidi.sellynapp;
 
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,13 +26,16 @@ import com.mmuhamadamirzaidi.sellynapp.Interface.RecyclerItemTouchHelperListener
 import com.mmuhamadamirzaidi.sellynapp.Model.Order;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CartAdapter;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CartViewHolder;
+import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class CartActivity extends AppCompatActivity implements RecyclerItemTouchHelperListener {
+import io.paperdb.Paper;
+
+public class CartActivity extends AppCompatActivity implements RecyclerItemTouchHelperListener, NavigationView.OnNavigationItemSelectedListener {
 
     RecyclerView recycler_cart;
     RecyclerView.LayoutManager layoutManager;
@@ -39,6 +48,10 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
 
     CartAdapter cartAdapter;
 
+    ImageView header_profile_image;
+
+    TextView header_fullname, header_identity_card;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +60,27 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
         Toolbar toolbar = findViewById(R.id.cart_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+
+        // Set user informations
+        View headerView = navigationView.getHeaderView(0);
+        header_fullname = (TextView) headerView.findViewById(R.id.header_fullname);
+        header_identity_card = (TextView) headerView.findViewById(R.id.header_identity_card);
+        header_profile_image = (ImageView) headerView.findViewById(R.id.header_profile_image);
+
+        header_fullname.setText(Common.currentUser.getUserName());
+        header_identity_card.setText(Common.currentUser.getUserIdentityCard());
+
+        // Set image
+        Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(header_profile_image);
 
         // Load category
         recycler_cart = (RecyclerView) findViewById(R.id.recycler_cart);
@@ -223,5 +257,103 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
 //            cart_grand_total.setText(fmt.format(grand_total_initial));
 //        }
         Toast.makeText(this, "Test swipe delete function!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+//        if (item.getItemId() == R.id.refresh){
+//            loadCategory();
+//        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+
+            Intent menuIntent = new Intent(CartActivity.this, MainActivity.class);
+            startActivity(menuIntent);
+
+        }
+//        else if (id == R.id.nav_holders) {
+//
+////            Toast.makeText(MainActivity.this, "Holders", Toast.LENGTH_SHORT).show();
+//            Intent holderIntent = new Intent(MainActivity.this, HolderListActivity.class);
+//            startActivity(holderIntent);
+//
+//        }
+        else if (id == R.id.nav_cart) {
+
+            Intent menuIntent = new Intent(CartActivity.this, CartActivity.class);
+            startActivity(menuIntent);
+
+        } else if (id == R.id.nav_order_status) {
+
+            Intent menuIntent = new Intent(CartActivity.this, OrderStatusActivity.class);
+            startActivity(menuIntent);
+
+        }else if (id == R.id.nav_wishlist) {
+
+            Toast.makeText(CartActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
+
+        }
+//        else if (id == R.id.banned_products) {
+//
+////            Toast.makeText(MainActivity.this, "Banned Products", Toast.LENGTH_SHORT).show();
+//            Intent bannedProductIntent = new Intent(MainActivity.this, BannedProductListActivity.class);
+//            startActivity(bannedProductIntent);
+//
+//        }
+        else if (id == R.id.news) {
+
+            Toast.makeText(CartActivity.this, "News", Toast.LENGTH_SHORT).show();
+
+        }else if (id == R.id.nav_account) {
+
+            Toast.makeText(CartActivity.this, "Account", Toast.LENGTH_SHORT).show();
+
+        }else if (id == R.id.nav_settings) {
+
+            Intent settingIntent = new Intent(CartActivity.this, SettingActivity.class);
+            startActivity(settingIntent);
+
+        }else if (id == R.id.nav_sign_out) {
+
+            //Forget user information
+            Paper.book().destroy();
+
+            Intent menuIntent = new Intent(CartActivity.this, SignInActivity.class);
+            menuIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(menuIntent);
+            Toast.makeText(CartActivity.this, "Sign out successfully", Toast.LENGTH_SHORT).show();
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
