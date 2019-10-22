@@ -117,17 +117,11 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
             Intent menuIntent = new Intent(SettingActivity.this, CartActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_order_status) {
-
-            Intent menuIntent = new Intent(SettingActivity.this, OrderStatusActivity.class);
-            startActivity(menuIntent);
-
         }else if (id == R.id.nav_wishlist) {
 
             Toast.makeText(SettingActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 
-        }
-        else if (id == R.id.news) {
+        }else if (id == R.id.news) {
 
             Toast.makeText(SettingActivity.this, "News", Toast.LENGTH_SHORT).show();
 

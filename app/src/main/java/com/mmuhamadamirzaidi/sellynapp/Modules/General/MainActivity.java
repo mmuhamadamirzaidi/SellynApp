@@ -206,12 +206,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent menuIntent = new Intent(MainActivity.this, CartActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_order_status) {
-
-            Intent menuIntent = new Intent(MainActivity.this, OrderStatusActivity.class);
-            startActivity(menuIntent);
-
-        }else if (id == R.id.nav_wishlist) {
+        } else if (id == R.id.nav_wishlist) {
 
             Toast.makeText(MainActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
     ImageView header_profile_image, account_profile_image;
 
     TextView header_fullname, header_identity_card, account_full_name, account_ic_number;
+
+    LinearLayout linlay_order_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
 
         Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(account_profile_image);
 
+        linlay_order_history = (LinearLayout) findViewById(R.id.linlay_order_history);
+
         // Set user informations
         View headerView = navigationView.getHeaderView(0);
         header_fullname = (TextView) headerView.findViewById(R.id.header_fullname);
@@ -68,6 +73,14 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
 
         // Set image
         Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(header_profile_image);
+
+        linlay_order_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(AccountActivity.this, OrderStatusActivity.class);
+                startActivity(menuIntent);
+            }
+        });
 
     }
 
@@ -115,12 +128,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
             Intent menuIntent = new Intent(AccountActivity.this, CartActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_order_status) {
-
-            Intent menuIntent = new Intent(AccountActivity.this, OrderStatusActivity.class);
-            startActivity(menuIntent);
-
-        }else if (id == R.id.nav_wishlist) {
+        } else if (id == R.id.nav_wishlist) {
 
             Toast.makeText(AccountActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 

@@ -13,10 +13,6 @@
             android:icon="@drawable/ic_shopping_basket_drawer_24dp"
             android:title="Cart" />
         <item
-            android:id="@+id/nav_order_status"
-            android:icon="@drawable/ic_timelapse_drawer_24dp"
-            android:title="Order Status" />
-        <item
             android:id="@+id/nav_wishlist"
             android:icon="@drawable/ic_book_drawer_24dp"
             android:title="Wishlist" />

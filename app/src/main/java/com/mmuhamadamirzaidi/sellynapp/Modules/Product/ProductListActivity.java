@@ -360,12 +360,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
             Intent menuIntent = new Intent(ProductListActivity.this, CartActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_order_status) {
-
-            Intent menuIntent = new Intent(ProductListActivity.this, OrderStatusActivity.class);
-            startActivity(menuIntent);
-
-        }else if (id == R.id.nav_wishlist) {
+        } else if (id == R.id.nav_wishlist) {
 
             Toast.makeText(ProductListActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 

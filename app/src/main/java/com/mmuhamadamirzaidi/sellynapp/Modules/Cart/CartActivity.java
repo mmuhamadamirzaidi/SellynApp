@@ -316,12 +316,7 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
             Intent menuIntent = new Intent(CartActivity.this, CartActivity.class);
             startActivity(menuIntent);
 
-        } else if (id == R.id.nav_order_status) {
-
-            Intent menuIntent = new Intent(CartActivity.this, OrderStatusActivity.class);
-            startActivity(menuIntent);
-
-        }else if (id == R.id.nav_wishlist) {
+        } else if (id == R.id.nav_wishlist) {
 
             Toast.makeText(CartActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
 
