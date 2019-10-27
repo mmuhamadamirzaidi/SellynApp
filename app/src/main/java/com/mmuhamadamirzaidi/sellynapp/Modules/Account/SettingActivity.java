@@ -111,8 +111,7 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
             Intent menuIntent = new Intent(SettingActivity.this, MainActivity.class);
             startActivity(menuIntent);
 
-        }
-        else if (id == R.id.nav_cart) {
+        }else if (id == R.id.nav_cart) {
 
             Intent menuIntent = new Intent(SettingActivity.this, CartActivity.class);
             startActivity(menuIntent);

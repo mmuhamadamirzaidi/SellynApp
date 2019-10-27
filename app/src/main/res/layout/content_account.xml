@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="@color/backgroundApp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:clipToPadding="false"
     tools:showIn="@layout/app_bar_account" >
 
     <ImageView
@@ -186,26 +187,25 @@
         <LinearLayout
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_vertical">
 
             <LinearLayout
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="4"
-                android:paddingBottom="12dp">
+                android:weightSum="4">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_weight="0"
                     android:id="@+id/instrucutions"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/profile"
                     app:civ_border_color="@color/colorPrimaryDark"
                     app:civ_border_width="2dp" />
@@ -247,8 +247,8 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_weight="0"
                     android:id="@+id/instrucuvdvdvtions"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/profile"
                     app:civ_border_color="@color/colorPrimaryDark"
                     app:civ_border_width="2dp" />
@@ -279,6 +279,7 @@
 
             <LinearLayout
                 android:paddingTop="12dp"
+                android:paddingBottom="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -287,8 +288,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_weight="0"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/profile"
                     app:civ_border_color="@color/colorPrimaryDark"
                     app:civ_border_width="2dp" />
@@ -305,6 +306,48 @@
 
                 <ImageView
                     android:id="@+id/cart_subvdvd_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="end"
+                    android:src="@drawable/ic_chevron_right_primary_dark_24dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/disable" />
+
+            <LinearLayout
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_weight="0"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="@color/colorPrimaryDark"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:fontFamily="@font/mm"
+                    android:gravity="start"
+                    android:paddingStart="16dp"
+                    android:text="Menu Kiv 3"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/cart_subvdvd_dddto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
