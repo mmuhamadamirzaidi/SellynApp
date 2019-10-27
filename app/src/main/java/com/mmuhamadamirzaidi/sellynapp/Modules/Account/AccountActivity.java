@@ -31,7 +31,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
 
     TextView header_fullname, header_identity_card, account_full_name, account_ic_number;
 
-    LinearLayout linlay_order_history;
+    LinearLayout linlay_profile, linlay_order_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
 
         Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(account_profile_image);
 
+        linlay_profile = (LinearLayout) findViewById(R.id.linlay_profile);
         linlay_order_history = (LinearLayout) findViewById(R.id.linlay_order_history);
 
         // Set user informations
@@ -73,6 +74,14 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
 
         // Set image
         Picasso.with(getBaseContext()).load(Common.currentUser.getUserImage()).into(header_profile_image);
+
+        linlay_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(AccountActivity.this, ProfileActivity.class);
+                startActivity(menuIntent);
+            }
+        });
 
         linlay_order_history.setOnClickListener(new View.OnClickListener() {
             @Override

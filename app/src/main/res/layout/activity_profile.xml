@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Modules.Account.ProfileActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/profile_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ToolbarTheme"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_arrow_back_white_24dp" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="My Profile"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:theme="@style/ToolbarTheme" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_mode_edit_white_24dp" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/profile_app_bar_layout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/account_profile_image"
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/profile"
+                app:civ_border_color="@color/colorPrimaryDark"
+                app:civ_border_width="2dp"/>
+
+           <LinearLayout
+               android:layout_marginStart="18dp"
+               android:layout_marginTop="37dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/account_full_name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/textColorAccent"
+                   android:fontFamily="@font/ml"
+                   android:text="Full Name"/>
+
+               <TextView
+                   android:id="@+id/account_ic_number"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/mr"
+                   android:textSize="15sp"
+                   android:text="Muhamad Amir Bin Zaidi"
+                   android:textColor="@color/textColorPrimary" />
+
+           </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_fulld_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColorAccent"
+                android:fontFamily="@font/ml"
+                android:text="Identity Card"/>
+
+            <TextView
+                android:id="@+id/account_ic_nuddmber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mr"
+                android:textSize="15sp"
+                android:text="999999036666"
+                android:textColor="@color/textColorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_fdull_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColorAccent"
+                android:fontFamily="@font/ml"
+                android:text="Phone Number"/>
+
+            <TextView
+                android:id="@+id/account_ic_nudsmber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mr"
+                android:textSize="15sp"
+                android:text="+60101111111"
+                android:textColor="@color/textColorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_full_ndame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColorAccent"
+                android:fontFamily="@font/ml"
+                android:text="E-Mail"/>
+
+            <TextView
+                android:id="@+id/account_ic_nusmber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mr"
+                android:textSize="15sp"
+                android:text="sellynapp@gmail.com"
+                android:textColor="@color/textColorPrimary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
