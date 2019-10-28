@@ -1,42 +1,44 @@
 package com.mmuhamadamirzaidi.sellynapp.Modules.Account;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mmuhamadamirzaidi.sellynapp.R;
 
-public class ProfileActivity extends AppCompatActivity {
+public class EditProfileActivity extends AppCompatActivity {
 
-    ImageView back, edit;
+    ImageView back;
+    TextView save_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_edit_profile);
 
-        Toolbar toolbar = findViewById(R.id.profile_toolbar);
+        Toolbar toolbar = findViewById(R.id.edit_profile_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         back = findViewById(R.id.back);
-        edit = findViewById(R.id.edit);
+
+        save_profile = findViewById(R.id.save_profile);
+
+        save_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(EditProfileActivity.this, "Profile changes saved!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-            }
-        });
-
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(ProfileActivity.this, EditProfileActivity.class);
-                startActivity(menuIntent);
             }
         });
     }
