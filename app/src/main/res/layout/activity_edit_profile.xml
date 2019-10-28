@@ -142,7 +142,7 @@
                         android:fontFamily="@font/mr"
                         android:hint="Muhamad Amir Bin Zaidi"
                         android:inputType="phone"
-                        android:textColor="@color/textColorAccent"
+                        android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />
 
@@ -180,7 +180,7 @@
                         android:fontFamily="@font/mr"
                         android:hint="961112145533"
                         android:inputType="phone"
-                        android:textColor="@color/textColorAccent"
+                        android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />
 
@@ -218,7 +218,7 @@
                         android:fontFamily="@font/mr"
                         android:hint="+60199999999"
                         android:inputType="phone"
-                        android:textColor="@color/textColorAccent"
+                        android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />
 
@@ -258,7 +258,7 @@
                         android:text="123456"
                         android:hint="Insert your password"
                         android:inputType="textPassword"
-                        android:textColor="@color/textColorAccent"
+                        android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />
 
@@ -298,7 +298,7 @@
                         android:text="1234567"
                         android:hint="Insert your password"
                         android:inputType="textPassword"
-                        android:textColor="@color/textColorAccent"
+                        android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />
 
