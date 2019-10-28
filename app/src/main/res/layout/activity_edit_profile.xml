@@ -112,43 +112,43 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_side"
-                    android:layout_marginEnd="@dimen/padding_side"
-                    android:fontFamily="@font/ml"
-                    android:text="Full Name"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/padding_side"-->
+<!--                    android:layout_marginEnd="@dimen/padding_side"-->
+<!--                    android:fontFamily="@font/ml"-->
+<!--                    android:text="Full Name"-->
+<!--                    android:textColor="@color/textColorPrimaryDark"-->
+<!--                    android:textSize="15sp" />-->
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintEnabled="false">
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:hintEnabled="false">-->
 
-                    <EditText
-                        android:id="@+id/sign_in_phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginEnd="13dp"
-                        android:fontFamily="@font/mr"
-                        android:hint="Muhamad Amir Bin Zaidi"
-                        android:inputType="phone"
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorHint="@color/textColorAccent"
-                        android:textSize="15sp" />
+<!--                    <EditText-->
+<!--                        android:id="@+id/sign_in_phone"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="13dp"-->
+<!--                        android:layout_marginEnd="13dp"-->
+<!--                        android:fontFamily="@font/mr"-->
+<!--                        android:hint="Muhamad Amir Bin Zaidi"-->
+<!--                        android:inputType="phone"-->
+<!--                        android:textColor="@color/textColorPrimary"-->
+<!--                        android:textColorHint="@color/textColorAccent"-->
+<!--                        android:textSize="15sp" />-->
 
-                </android.support.design.widget.TextInputLayout>
+<!--                </android.support.design.widget.TextInputLayout>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -188,6 +188,44 @@
 
             </LinearLayout>
 
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/padding_side"-->
+<!--                    android:layout_marginEnd="@dimen/padding_side"-->
+<!--                    android:fontFamily="@font/ml"-->
+<!--                    android:text="Phone Number"-->
+<!--                    android:textColor="@color/textColorPrimaryDark"-->
+<!--                    android:textSize="15sp" />-->
+
+<!--                <android.support.design.widget.TextInputLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:hintEnabled="false">-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/sign_in_fphone"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="13dp"-->
+<!--                        android:layout_marginEnd="13dp"-->
+<!--                        android:fontFamily="@font/mr"-->
+<!--                        android:hint="+60199999999"-->
+<!--                        android:inputType="phone"-->
+<!--                        android:textColor="@color/textColorPrimary"-->
+<!--                        android:textColorHint="@color/textColorAccent"-->
+<!--                        android:textSize="15sp" />-->
+
+<!--                </android.support.design.widget.TextInputLayout>-->
+
+<!--            </LinearLayout>-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,24 +238,26 @@
                     android:layout_marginStart="@dimen/padding_side"
                     android:layout_marginEnd="@dimen/padding_side"
                     android:fontFamily="@font/ml"
-                    android:text="Phone Number"
+                    android:text="Secure Code"
                     android:textColor="@color/textColorPrimaryDark"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:hintEnabled="false">
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
 
                     <EditText
-                        android:id="@+id/sign_in_fphone"
+                        android:id="@+id/sign_in_passwfdord"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
                         android:layout_marginEnd="13dp"
                         android:fontFamily="@font/mr"
-                        android:hint="+60199999999"
-                        android:inputType="phone"
+                        android:text="123456"
+                        android:hint="Insert your password"
+                        android:inputType="textPassword"
                         android:textColor="@color/textColorPrimary"
                         android:textColorHint="@color/textColorAccent"
                         android:textSize="15sp" />

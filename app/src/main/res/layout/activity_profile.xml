@@ -72,7 +72,7 @@
             android:layout_marginTop="30dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/account_profile_image"
+                android:id="@+id/profile_image"
                 android:layout_width="71dp"
                 android:layout_height="71dp"
                 android:layout_marginStart="16dp"
@@ -88,7 +88,6 @@
                android:orientation="vertical">
 
                <TextView
-                   android:id="@+id/account_full_name"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textColor="@color/textColorAccent"
@@ -96,7 +95,7 @@
                    android:text="Full Name"/>
 
                <TextView
-                   android:id="@+id/account_ic_number"
+                   android:id="@+id/profile_full_name"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/mr"
@@ -121,7 +120,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/account_fulld_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textColorAccent"
@@ -129,7 +127,7 @@
                 android:text="Identity Card"/>
 
             <TextView
-                android:id="@+id/account_ic_nuddmber"
+                android:id="@+id/profile_ic_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mr"
@@ -147,7 +145,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/account_fdull_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textColorAccent"
@@ -155,7 +152,7 @@
                 android:text="Phone Number"/>
 
             <TextView
-                android:id="@+id/account_ic_nudsmber"
+                android:id="@+id/profile_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mr"
@@ -165,31 +162,31 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/account_full_ndame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textColorAccent"
-                android:fontFamily="@font/ml"
-                android:text="E-Mail"/>
+<!--            <TextView-->
+<!--                android:id="@+id/account_full_ndame"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/textColorAccent"-->
+<!--                android:fontFamily="@font/ml"-->
+<!--                android:text="E-Mail"/>-->
 
-            <TextView
-                android:id="@+id/account_ic_nusmber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/mr"
-                android:textSize="15sp"
-                android:text="sellynapp@gmail.com"
-                android:textColor="@color/textColorPrimary" />
+<!--            <TextView-->
+<!--                android:id="@+id/account_ic_nusmber"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/mr"-->
+<!--                android:textSize="15sp"-->
+<!--                android:text="sellynapp@gmail.com"-->
+<!--                android:textColor="@color/textColorPrimary" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 
