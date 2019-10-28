@@ -34,6 +34,14 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
 
+        // Hide the Status Bar and the Navigation Bar
+
+        View overlay = findViewById(R.id.activity_forget_password);
+
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         forget_password_phone = findViewById(R.id.forget_password_phone);
         forget_password_secure_code = findViewById(R.id.forget_password_secure_code);
 

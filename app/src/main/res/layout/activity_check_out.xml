@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundApp"
     android:orientation="vertical"
-    tools:context=".Modules.Checkout.CheckOutActivity">
+    tools:context=".Modules.Checkout.CheckOutActivity"
+    android:id="@+id/activity_check_out">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

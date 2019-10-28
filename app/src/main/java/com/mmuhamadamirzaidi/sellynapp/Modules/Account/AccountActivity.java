@@ -38,6 +38,14 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        // Hide the Status Bar and the Navigation Bar
+
+        View overlay = findViewById(R.id.drawer_layout);
+
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         Toolbar toolbar = findViewById(R.id.account_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);

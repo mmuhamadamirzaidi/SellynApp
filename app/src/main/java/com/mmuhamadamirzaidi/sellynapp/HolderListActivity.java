@@ -54,6 +54,14 @@ public class HolderListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holder_list);
 
+        // Hide the Status Bar and the Navigation Bar
+
+        View overlay = findViewById(R.id.swipe_layout_holder_list);
+
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         Toolbar toolbar = findViewById(R.id.holder_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);

@@ -3,6 +3,7 @@ package com.mmuhamadamirzaidi.sellynapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,14 @@ public class HolderDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holder_detail);
+
+        // Hide the Status Bar and the Navigation Bar
+
+        View overlay = findViewById(R.id.activity_holder_detail);
+
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         Toolbar toolbar = findViewById(R.id.holder_detail_toolbar);
         toolbar.setTitle("");

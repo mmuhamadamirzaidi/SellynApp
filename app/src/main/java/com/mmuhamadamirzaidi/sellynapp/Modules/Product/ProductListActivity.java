@@ -81,6 +81,14 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
 
+        // Hide the Status Bar and the Navigation Bar
+
+        View overlay = findViewById(R.id.drawer_layout);
+
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         Toolbar toolbar = findViewById(R.id.product_list_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Modules.Account.OrderStatusActivity"
-    android:background="@color/backgroundApp">
+    android:background="@color/backgroundApp"
+    android:id="@+id/activity_order_status">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/order_list_app_bar_layout"

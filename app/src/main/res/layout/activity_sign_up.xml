@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundApp"
-    tools:context=".Modules.General.SignUpActivity">
+    tools:context=".Modules.General.SignUpActivity"
+    android:id="@+id/activity_sign_up">
 
     <LinearLayout
         android:id="@+id/sign_in_header"
