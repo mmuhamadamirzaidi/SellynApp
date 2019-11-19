@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     //Main
-    <color name="colorPrimary">#2C6634</color>
-    <color name="colorPrimaryDark">#24562B</color>
-    <color name="colorAccent">#24562B</color>
+    <color name="colorPrimary">#8186d5</color>
+    <color name="colorPrimaryDark">#494ca2</color>
+    <color name="colorAccent">#494ca2</color>
+
+    <color name="colorThird">#c6cbef</color>
+    <color name="colorForth">#e3e7f1</color>
 
     //Background
     <color name="backgroundApp">#f4f4f4</color>
@@ -26,9 +29,11 @@
 <!--    <color name="booked">#fabf2f</color>-->
 
     //Order Status
-    <color name="delivered">#10800C</color>
-    <color name="shipped">#E4921F</color>
-    <color name="cancelled">#941512</color>
+    <color name="delivered">#0b8457</color>
+    <color name="shipped">#ec9b3b</color>
+    <color name="cancelled">#db3951</color>
+
+    <color name="yellow">#eac100</color>
 
     //Others
     <color name="white">#ffffff</color>

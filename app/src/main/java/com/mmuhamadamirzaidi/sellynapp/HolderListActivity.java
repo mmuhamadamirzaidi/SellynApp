@@ -10,8 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -23,9 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Interface.ItemClickListener;
-import com.mmuhamadamirzaidi.sellynapp.Model.BannedProduct;
 import com.mmuhamadamirzaidi.sellynapp.Model.Holder;
-import com.mmuhamadamirzaidi.sellynapp.ViewHolder.BannedProductViewHolder;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.HolderViewHolder;
 import com.squareup.picasso.Picasso;
 

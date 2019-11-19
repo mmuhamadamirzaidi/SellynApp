@@ -47,7 +47,7 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="16dp"
                 android:text="Save"
-                android:textColor="@color/shipped" />
+                android:textColor="@color/yellow" />
 
         </android.support.v7.widget.Toolbar>
 
