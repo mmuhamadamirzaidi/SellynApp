@@ -28,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     private String sign_up_identity_card = "961122115566";
 
     private String sign_up_address = "Semarak Beach Inn Dungun, Kampung Sura Atas, Kuala Dungun, Terengganu";
-    private String sign_up_image = "https://firebasestorage.googleapis.com/v0/b/fyneapp.appspot.com/o/profile.png?alt=media&token=40506c2c-26ee-4487-923b-d5d12e67d51a";
+    private String sign_up_image = "https://firebasestorage.googleapis.com/v0/b/sellynapp.appspot.com/o/profile.png?alt=media&token=f7e7b751-bc48-4d47-b214-bde3aa30df24";
     private String sign_up_is_staff = "false";
     private String sign_up_secure_code = "abc123456";
     private String sign_up_holder_id = "00";
