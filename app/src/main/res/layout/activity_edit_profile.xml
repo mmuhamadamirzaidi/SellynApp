@@ -40,14 +40,13 @@
                 android:textSize="20sp"
                 android:theme="@style/ToolbarTheme" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/save_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="16dp"
-                android:text="Save"
-                android:textColor="@color/yellow" />
+                android:src="@drawable/ic_save_white_24dp" />
 
         </android.support.v7.widget.Toolbar>
 
