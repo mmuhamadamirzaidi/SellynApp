@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Hide the Status Bar and the Navigation Bar
 
-        View overlay = findViewById(R.id.drawer_layout);
-
-        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+//        View overlay = findViewById(R.id.drawer_layout);
+//
+//        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         Toolbar toolbar = findViewById(R.id.category_toolbar);
         toolbar.setTitle("");

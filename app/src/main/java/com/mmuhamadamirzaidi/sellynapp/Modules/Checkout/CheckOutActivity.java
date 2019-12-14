@@ -41,11 +41,11 @@ public class CheckOutActivity extends AppCompatActivity {
 
         // Hide the Status Bar and the Navigation Bar
 
-        View overlay = findViewById(R.id.activity_check_out);
-
-        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+//        View overlay = findViewById(R.id.activity_check_out);
+//
+//        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         Toolbar toolbar = findViewById(R.id.check_out_toolbar);
         toolbar.setTitle("");
