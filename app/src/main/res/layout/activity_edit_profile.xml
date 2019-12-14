@@ -53,304 +53,349 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:scrollbars="none"
         android:layout_below="@+id/edit_profile_app_bar_layout"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_gravity="center"
-                android:id="@+id/account_profile_image"
-                android:layout_width="71dp"
-                android:layout_height="71dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/profile"
-                app:civ_border_color="@color/colorPrimaryDark"
-                app:civ_border_width="2dp" />
-
-            <LinearLayout
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_photo_camera_primary_24dp" />
-
-<!--                <TextView-->
-<!--                    android:id="@+id/account_full_name"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/ml"-->
-<!--                    android:text="Full Name"-->
-<!--                    android:textColor="@color/textColorAccent" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/account_ic_number"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/mr"-->
-<!--                    android:text="Muhamad Amir Bin Zaidi"-->
-<!--                    android:textColor="@color/textColorPrimary"-->
-<!--                    android:textSize="15sp" />-->
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="@dimen/padding_side"-->
-<!--                    android:layout_marginEnd="@dimen/padding_side"-->
-<!--                    android:fontFamily="@font/ml"-->
-<!--                    android:text="Full Name"-->
-<!--                    android:textColor="@color/textColorPrimaryDark"-->
-<!--                    android:textSize="15sp" />-->
-
-<!--                <android.support.design.widget.TextInputLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:hintEnabled="false">-->
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/sign_in_phone"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="13dp"-->
-<!--                        android:layout_marginEnd="13dp"-->
-<!--                        android:fontFamily="@font/mr"-->
-<!--                        android:hint="Muhamad Amir Bin Zaidi"-->
-<!--                        android:inputType="phone"-->
-<!--                        android:textColor="@color/textColorPrimary"-->
-<!--                        android:textColorHint="@color/textColorAccent"-->
-<!--                        android:textSize="15sp" />-->
-
-<!--                </android.support.design.widget.TextInputLayout>-->
-
-<!--            </LinearLayout>-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
 
-                <TextView
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/account_profile_image"
+                    android:layout_width="71dp"
+                    android:layout_height="71dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="@color/colorPrimaryDark"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_side"
-                    android:layout_marginEnd="@dimen/padding_side"
-                    android:fontFamily="@font/ml"
-                    android:text="Identity Card"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
+                    android:layout_marginStart="18dp"
+                    android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintEnabled="false">
-
-                    <EditText
-                        android:id="@+id/sign_idn_phone"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginEnd="13dp"
-                        android:fontFamily="@font/mr"
-                        android:hint="961112145533"
-                        android:inputType="phone"
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorHint="@color/textColorAccent"
-                        android:textSize="15sp" />
+                        android:src="@drawable/ic_photo_camera_primary_24dp" />
 
-                </android.support.design.widget.TextInputLayout>
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/account_full_name"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:fontFamily="@font/ml"-->
+                    <!--                    android:text="Full Name"-->
+                    <!--                    android:textColor="@color/textColorAccent" />-->
 
-            </LinearLayout>
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/account_ic_number"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:fontFamily="@font/mr"-->
+                    <!--                    android:text="Muhamad Amir Bin Zaidi"-->
+                    <!--                    android:textColor="@color/textColorPrimary"-->
+                    <!--                    android:textSize="15sp" />-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="@dimen/padding_side"-->
-<!--                    android:layout_marginEnd="@dimen/padding_side"-->
-<!--                    android:fontFamily="@font/ml"-->
-<!--                    android:text="Phone Number"-->
-<!--                    android:textColor="@color/textColorPrimaryDark"-->
-<!--                    android:textSize="15sp" />-->
-
-<!--                <android.support.design.widget.TextInputLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:hintEnabled="false">-->
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/sign_in_fphone"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="13dp"-->
-<!--                        android:layout_marginEnd="13dp"-->
-<!--                        android:fontFamily="@font/mr"-->
-<!--                        android:hint="+60199999999"-->
-<!--                        android:inputType="phone"-->
-<!--                        android:textColor="@color/textColorPrimary"-->
-<!--                        android:textColorHint="@color/textColorAccent"-->
-<!--                        android:textSize="15sp" />-->
-
-<!--                </android.support.design.widget.TextInputLayout>-->
-
-<!--            </LinearLayout>-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_side"
-                    android:layout_marginEnd="@dimen/padding_side"
-                    android:fontFamily="@font/ml"
-                    android:text="Secure Code"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintEnabled="false"
-                    app:passwordToggleEnabled="true">
-
-                    <EditText
-                        android:id="@+id/sign_in_passwfdord"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginEnd="13dp"
-                        android:fontFamily="@font/mr"
-                        android:text="123456"
-                        android:hint="Insert your password"
-                        android:inputType="textPassword"
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorHint="@color/textColorAccent"
-                        android:textSize="15sp" />
-
-                </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:orientation="vertical">
 
-                <TextView
+                <!--            <LinearLayout-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="30dp"-->
+                <!--                android:orientation="vertical">-->
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="@dimen/padding_side"-->
+                <!--                    android:layout_marginEnd="@dimen/padding_side"-->
+                <!--                    android:fontFamily="@font/ml"-->
+                <!--                    android:text="Full Name"-->
+                <!--                    android:textColor="@color/textColorPrimaryDark"-->
+                <!--                    android:textSize="15sp" />-->
+
+                <!--                <android.support.design.widget.TextInputLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:hintEnabled="false">-->
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/sign_in_phone"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginStart="13dp"-->
+                <!--                        android:layout_marginEnd="13dp"-->
+                <!--                        android:fontFamily="@font/mr"-->
+                <!--                        android:hint="Muhamad Amir Bin Zaidi"-->
+                <!--                        android:inputType="phone"-->
+                <!--                        android:textColor="@color/textColorPrimary"-->
+                <!--                        android:textColorHint="@color/textColorAccent"-->
+                <!--                        android:textSize="15sp" />-->
+
+                <!--                </android.support.design.widget.TextInputLayout>-->
+
+                <!--            </LinearLayout>-->
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_side"
-                    android:layout_marginEnd="@dimen/padding_side"
-                    android:fontFamily="@font/ml"
-                    android:text="Current Password"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintEnabled="false"
-                    app:passwordToggleEnabled="true">
-
-                    <EditText
-                        android:id="@+id/sign_in_password"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginEnd="13dp"
-                        android:fontFamily="@font/mr"
-                        android:text="123456"
-                        android:hint="Insert your password"
-                        android:inputType="textPassword"
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorHint="@color/textColorAccent"
+                        android:layout_marginStart="@dimen/padding_side"
+                        android:layout_marginEnd="@dimen/padding_side"
+                        android:fontFamily="@font/ml"
+                        android:text="Identity Card"
+                        android:textColor="@color/textColorPrimaryDark"
                         android:textSize="15sp" />
 
-                </android.support.design.widget.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_side"
-                    android:layout_marginEnd="@dimen/padding_side"
-                    android:fontFamily="@font/ml"
-                    android:text="New Password"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintEnabled="false"
-                    app:passwordToggleEnabled="true">
-
-                    <EditText
-                        android:id="@+id/sign_in_passdword"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="13dp"
-                        android:layout_marginEnd="13dp"
-                        android:fontFamily="@font/mr"
-                        android:text="1234567"
-                        android:hint="Insert your password"
-                        android:inputType="textPassword"
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorHint="@color/textColorAccent"
+                        app:hintEnabled="false">
+
+                        <EditText
+                            android:id="@+id/sign_idn_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginEnd="13dp"
+                            android:fontFamily="@font/mr"
+                            android:hint="961112145533"
+                            android:inputType="phone"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/textColorAccent"
+                            android:textSize="15sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <!--            <LinearLayout-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="30dp"-->
+                <!--                android:orientation="vertical">-->
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="@dimen/padding_side"-->
+                <!--                    android:layout_marginEnd="@dimen/padding_side"-->
+                <!--                    android:fontFamily="@font/ml"-->
+                <!--                    android:text="Phone Number"-->
+                <!--                    android:textColor="@color/textColorPrimaryDark"-->
+                <!--                    android:textSize="15sp" />-->
+
+                <!--                <android.support.design.widget.TextInputLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:hintEnabled="false">-->
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/sign_in_fphone"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginStart="13dp"-->
+                <!--                        android:layout_marginEnd="13dp"-->
+                <!--                        android:fontFamily="@font/mr"-->
+                <!--                        android:hint="+60199999999"-->
+                <!--                        android:inputType="phone"-->
+                <!--                        android:textColor="@color/textColorPrimary"-->
+                <!--                        android:textColorHint="@color/textColorAccent"-->
+                <!--                        android:textSize="15sp" />-->
+
+                <!--                </android.support.design.widget.TextInputLayout>-->
+
+                <!--            </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_side"
+                        android:layout_marginEnd="@dimen/padding_side"
+                        android:fontFamily="@font/ml"
+                        android:text="Secure Code"
+                        android:textColor="@color/textColorPrimaryDark"
                         android:textSize="15sp" />
 
-                </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:id="@+id/sign_in_passwfdord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginEnd="13dp"
+                            android:fontFamily="@font/mr"
+                            android:text="123456"
+                            android:hint="Insert your password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/textColorAccent"
+                            android:textSize="15sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_side"
+                        android:layout_marginEnd="@dimen/padding_side"
+                        android:fontFamily="@font/ml"
+                        android:text="Current Password"
+                        android:textColor="@color/textColorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:id="@+id/sign_in_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginEnd="13dp"
+                            android:fontFamily="@font/mr"
+                            android:text="123456"
+                            android:hint="Insert your password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/textColorAccent"
+                            android:textSize="15sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_side"
+                        android:layout_marginEnd="@dimen/padding_side"
+                        android:fontFamily="@font/ml"
+                        android:text="New Password"
+                        android:textColor="@color/textColorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:id="@+id/sign_in_passdword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginEnd="13dp"
+                            android:fontFamily="@font/mr"
+                            android:text="1234567"
+                            android:hint="Insert your password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/textColorAccent"
+                            android:textSize="15sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_side"
+                        android:layout_marginEnd="@dimen/padding_side"
+                        android:fontFamily="@font/ml"
+                        android:text="Confirm New Password"
+                        android:textColor="@color/textColorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginEnd="13dp"
+                            android:fontFamily="@font/mr"
+                            android:hint="Insert your password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/textColorAccent"
+                            android:textSize="15sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
+
+
 
 </RelativeLayout>
