@@ -116,7 +116,7 @@ public class SignInActivity extends AppCompatActivity {
                         Paper.book().write(Common.USER_PASSWORD_KEY, sign_in_password.getText().toString().trim());
                     }
 
-                    table_user.addValueEventListener(new ValueEventListener() {
+                    table_user.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -129,11 +129,16 @@ public class SignInActivity extends AppCompatActivity {
                                 user.setUserPhone(sign_in_phone.getText().toString().trim());
 
                                 if (user.getUserPassword().equals(sign_in_password.getText().toString().trim())) {
+                                    dialog.dismiss();
+
                                     Toast.makeText(SignInActivity.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
 
                                     Common.currentUser = user;
                                     SendUserToMainActivity();
+
+                                    table_user.removeEventListener(this);
                                 } else {
+                                    dialog.dismiss();
                                     Toast.makeText(SignInActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                                 }
                             } else {

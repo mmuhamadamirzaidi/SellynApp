@@ -177,7 +177,7 @@
                         app:hintEnabled="false">
 
                         <EditText
-                            android:id="@+id/sign_idn_phone"
+                            android:id="@+id/edit_identity_card"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
@@ -254,7 +254,7 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/sign_in_passwfdord"
+                            android:id="@+id/edit_secure_code"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
@@ -294,13 +294,12 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/sign_in_password"
+                            android:id="@+id/edit_current_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
                             android:layout_marginEnd="13dp"
                             android:fontFamily="@font/mr"
-                            android:text="123456"
                             android:hint="Insert your password"
                             android:inputType="textPassword"
                             android:textColor="@color/textColorPrimary"
@@ -334,13 +333,12 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/sign_in_passdword"
+                            android:id="@+id/edit_current_new_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
                             android:layout_marginEnd="13dp"
                             android:fontFamily="@font/mr"
-                            android:text="1234567"
                             android:hint="Insert your password"
                             android:inputType="textPassword"
                             android:textColor="@color/textColorPrimary"
@@ -374,6 +372,7 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
+                            android:id="@+id/edit_confirm_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="13dp"
