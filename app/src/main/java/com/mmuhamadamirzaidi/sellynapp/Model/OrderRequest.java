@@ -18,12 +18,14 @@ public class OrderRequest {
 
     public String notes;
 
+    public String paymentState;
+
     public List<Order> product;
 
     public OrderRequest() {
     }
 
-    public OrderRequest(String userPhone, String userName, String userAddress, String grandTotal, String grandSubTotal, String grandDeliveryCharge, String grandOthersCharge, String grandDiscount, String notes, List<Order> product) {
+    public OrderRequest(String userPhone, String userName, String userAddress, String grandTotal, String grandSubTotal, String grandDeliveryCharge, String grandOthersCharge, String grandDiscount, String notes, String paymentState, List<Order> product) {
         this.userPhone = userPhone;
         this.userName = userName;
         this.userAddress = userAddress;
@@ -34,6 +36,7 @@ public class OrderRequest {
         this.grandOthersCharge = grandOthersCharge;
         this.grandDiscount = grandDiscount;
         this.notes = notes;
+        this.paymentState = paymentState;
         this.product = product;
     }
 
@@ -115,6 +118,14 @@ public class OrderRequest {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getpaymentState() {
+        return paymentState;
+    }
+
+    public void setpaymentState(String paymentState) {
+        this.paymentState = paymentState;
     }
 
     public List<Order> getProduct() {

@@ -48,7 +48,7 @@ dependencies {
 //    implementation 'com.google.android.gms:play-services-places:11.6.2'
 
     //PayPal Library
-//    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 
     //Others Library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
