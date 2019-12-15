@@ -24,10 +24,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andremion.counterfab.CounterFab;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mmuhamadamirzaidi.sellynapp.Database.Database;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Account.AccountActivity;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Account.SettingActivity;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Cart.CartActivity;
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FirebaseRecyclerAdapter<Category, CategoryViewHolder> adapter;
 
     SwipeRefreshLayout swipe_layout_category;
+
+    CounterFab fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         category = database.getReference("Category");
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +121,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(cartIntent);
             }
         });
+
+        fab.setCount(new Database(this).getCountCart());
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -187,6 +193,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recycler_category.setAdapter(adapter);
         swipe_layout_category.setRefreshing(false);
     }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        fab.setCount(new Database(this).getCountCart());
+//
+//
+//        //Fix back button not display Category
+//        if (adapter != null){
+//            adapter.startListening();
+//        }
+//    }
 
     @Override
     protected void onStop() {

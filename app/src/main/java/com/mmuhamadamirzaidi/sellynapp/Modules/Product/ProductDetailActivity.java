@@ -11,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andremion.counterfab.CounterFab;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,7 +46,9 @@ public class ProductDetailActivity extends AppCompatActivity implements RatingDi
 
     RatingBar detail_rating_bar;
 
-    FloatingActionButton detail_product_fab_bookmark, detail_product_fab_cart;
+    FloatingActionButton detail_product_fab_bookmark;
+
+    CounterFab detail_product_fab_cart;
 
     String productId="", quantity = "1";
 
@@ -94,7 +97,7 @@ public class ProductDetailActivity extends AppCompatActivity implements RatingDi
         detail_view_total_review = (LinearLayout) findViewById(R.id.detail_view_total_review);
 
         detail_product_fab_bookmark = (FloatingActionButton) findViewById(R.id.detail_product_fab_bookmark);
-        detail_product_fab_cart = (FloatingActionButton) findViewById(R.id.detail_product_fab_cart);
+        detail_product_fab_cart = (CounterFab) findViewById(R.id.detail_product_fab_cart);
 
 //        detail_give_review.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -119,6 +122,8 @@ public class ProductDetailActivity extends AppCompatActivity implements RatingDi
                 Toast.makeText(ProductDetailActivity.this, currentProduct.getProductName()+" added to cart!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        detail_product_fab_cart.setCount(new Database(this).getCountCart());
 
         // Get productId intent
         if (getIntent() != null){

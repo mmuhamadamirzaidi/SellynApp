@@ -32,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.mmuhamadamirzaidi.sellynapp.Model.Order;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Cart.CartActivity;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Database.Database;
@@ -58,7 +59,6 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
     DatabaseReference product;
 
     ImageView product_image;
-
     TextView product_name;
 
     String categoryId="";
@@ -306,9 +306,26 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
             protected void onBindViewHolder(@NonNull final ProductViewHolder viewHolder, final int position, @NonNull final Product model) {
 
                 viewHolder.product_name.setText(model.getProductName());
-                viewHolder.product_notification.setText(model.getNotificationNo());
+//                viewHolder.product_notification.setText(model.getNotificationNo());
 
                 Picasso.with(getBaseContext()).load(model.getProductImage()).into(viewHolder.product_image);
+
+                //Quick cart
+                viewHolder.product_quick_cart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        new Database(getBaseContext()).addToCart(new Order(
+                                adapter.getRef(position).getKey(),
+                                model.getProductName(),
+                                "1",
+                                model.getProductPrice(),
+                                model.getProductDiscount(),
+                                model.getProductImage()
+                        ));
+
+                        Toast.makeText(ProductListActivity.this, " added to cart!", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 //Add wishlist
                 if (wishlistDB.currentWishlist(adapter.getRef(position).getKey()))
@@ -359,6 +376,16 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         recycler_product.setAdapter(adapter);
         swipe_layout_product_list.setRefreshing(false);
     }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        //Fix back button not display Category
+//        if (adapter != null){
+//            adapter.startListening();
+//        }
+//    }
 
     @Override
     protected void onStop() {
