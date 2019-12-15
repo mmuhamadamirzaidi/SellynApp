@@ -179,8 +179,6 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         layoutManager = new LinearLayoutManager(this);
         recycler_product.setLayoutManager(layoutManager);
 
-
-
         product_list_search_bar = (MaterialSearchBar) findViewById(R.id.product_list_search_bar);
         product_list_search_bar.setHint("Search the products...");
 
@@ -273,7 +271,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                 return new ProductViewHolder(itemView);
             }
         };
-        searchAdapter.startListening();
+//        searchAdapter.startListening();
         recycler_product.setAdapter(searchAdapter);
     }
 
@@ -366,7 +364,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
-        searchAdapter.stopListening();
+//        searchAdapter.stopListening();
     }
 
     @Override
