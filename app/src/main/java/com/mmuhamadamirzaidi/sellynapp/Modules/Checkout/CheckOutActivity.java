@@ -44,6 +44,7 @@ public class CheckOutActivity extends AppCompatActivity {
     private Button button_check_out;
 
     List<Order> cart = new ArrayList<>();
+    List<Order> checkOutActivity = new ArrayList<>();
 
     CartAdapter cartAdapter;
 
@@ -85,8 +86,8 @@ public class CheckOutActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         orderrequest = database.getReference("OrderRequest");
 
-        cart = new Database(this).getCart();
-        cartAdapter = new CartAdapter(cart, this);
+        checkOutActivity = new Database(this).getCart();
+        cartAdapter = new CartAdapter(checkOutActivity, this);
 
         button_check_out.setOnClickListener(new View.OnClickListener() {
             @Override

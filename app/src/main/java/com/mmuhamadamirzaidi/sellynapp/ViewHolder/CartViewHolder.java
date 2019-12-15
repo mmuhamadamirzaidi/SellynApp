@@ -20,7 +20,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public ImageView item_cart_product_image;
 
-    public ElegantNumberButton item_cart_count;
+    public ElegantNumberButton item_cart_update_quantity;
 
     private ItemClickListener itemClickListener;
 
@@ -40,7 +40,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
         item_cart_product_image = (ImageView) itemView.findViewById(R.id.item_cart_product_image);
 
-        item_cart_count = (ElegantNumberButton) itemView.findViewById(R.id.item_cart_count);
+        item_cart_update_quantity = (ElegantNumberButton) itemView.findViewById(R.id.item_cart_update_quantity);
 
         cart_delete = (RelativeLayout) itemView.findViewById(R.id.cart_delete);
         cart_foreground = (LinearLayout) itemView.findViewById(R.id.cart_foreground);

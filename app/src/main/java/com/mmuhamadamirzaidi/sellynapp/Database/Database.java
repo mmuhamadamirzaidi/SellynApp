@@ -25,7 +25,7 @@ public class Database extends SQLiteAssetHelper {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"ProductId", "ProductName", "Quantity", "Price", "Discount", "ProductImage"};
+        String[] sqlSelect = {"ID", "ProductId", "ProductName", "Quantity", "Price", "Discount", "ProductImage"};
         String sqlTable = "OrderDetail";
 
         qb.setTables(sqlTable);
@@ -35,7 +35,9 @@ public class Database extends SQLiteAssetHelper {
 
         if (c.moveToFirst()){
             do{
-                result.add(new Order(c.getString(c.getColumnIndex("ProductId")),
+                result.add(new Order(
+                        c.getInt(c.getColumnIndex("ID")),
+                        c.getString(c.getColumnIndex("ProductId")),
                         c.getString(c.getColumnIndex("ProductName")),
                         c.getString(c.getColumnIndex("Quantity")),
                         c.getString(c.getColumnIndex("Price")),
@@ -107,6 +109,7 @@ public class Database extends SQLiteAssetHelper {
     }
 
     public int getCountCart(){
+
         int count = 0;
 
         SQLiteDatabase db = getReadableDatabase();
@@ -121,5 +124,13 @@ public class Database extends SQLiteAssetHelper {
             while(cursor.moveToNext());
         }
         return count;
+    }
+
+    public void updateCart(Order order) {
+
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("UPDATE OrderDetail SET Quantity = %s WHERE ID = %d", order.getQuantity(), order.getID());
+
+        db.execSQL(query);
     }
 }

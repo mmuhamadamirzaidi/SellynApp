@@ -2,18 +2,38 @@ package com.mmuhamadamirzaidi.sellynapp.Model;
 
 public class Order {
 
+    public int ID;
     public String productId, productName, quantity, price, discount, productImage;
 
     public Order() {
     }
 
     public Order(String productId, String productName, String quantity, String price, String discount, String productImage) {
+        this.ID = ID;
         this.productId = productId;
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
         this.discount = discount;
         this.productImage = productImage;
+    }
+
+    public Order(int ID, String productId, String productName, String quantity, String price, String discount, String productImage) {
+        this.ID = ID;
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+        this.discount = discount;
+        this.productImage = productImage;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getProductId() {

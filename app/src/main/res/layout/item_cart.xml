@@ -157,7 +157,7 @@
                                 android:orientation="horizontal">
 
                                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                                    android:id="@+id/item_cart_count"
+                                    android:id="@+id/item_cart_update_quantity"
                                     android:gravity="right"
                                     android:fontFamily="@font/mr"
                                     android:layout_width="100dp"

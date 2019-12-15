@@ -48,7 +48,7 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
     RecyclerView recycler_cart;
     RecyclerView.LayoutManager layoutManager;
 
-    TextView cart_add_new_product, cart_sub_total, cart_delivery_charge, cart_others_charge, cart_grand_total, cart_discount;
+    public TextView cart_add_new_product, cart_sub_total, cart_delivery_charge, cart_others_charge, cart_grand_total, cart_discount;
 
     Button cart_button_place_order;
 
