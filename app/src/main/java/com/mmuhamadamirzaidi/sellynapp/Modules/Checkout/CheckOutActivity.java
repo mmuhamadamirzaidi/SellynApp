@@ -62,6 +62,8 @@ public class CheckOutActivity extends AppCompatActivity {
 
     Place shippingAddress;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,24 +138,13 @@ public class CheckOutActivity extends AppCompatActivity {
                 startActivityForResult(intent_payment, PAYPAL_REQUEST_CODE);
 
 
-//                //Remove autocomplete address fragment
-//                getSupportFragmentManager().beginTransaction()
-//                        .remove(getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment))
-//                        .commit();
+                //Remove autocomplete address fragment
+                getSupportFragmentManager().beginTransaction()
+                        .remove(getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment))
+                        .commit();
             }
         });
     }
-
-
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//
-//        //Remove autocomplete address fragment
-//        getSupportFragmentManager().beginTransaction()
-//                .remove(getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment))
-//                .commit();
-//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
