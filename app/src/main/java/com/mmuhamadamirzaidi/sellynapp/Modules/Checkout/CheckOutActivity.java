@@ -6,11 +6,16 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
@@ -40,7 +45,8 @@ public class CheckOutActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference orderrequest;
 
-    private EditText check_out_delivery_address, check_out_delivery_notes;
+    private EditText check_out_delivery_notes;
+//    private EditText check_out_delivery_address, check_out_delivery_notes;
     private Button button_check_out;
 
     List<Order> cart = new ArrayList<>();
@@ -53,6 +59,8 @@ public class CheckOutActivity extends AppCompatActivity {
             .clientId(Config.PAYPAL_CLIENT_ID);
 
     private int PAYPAL_REQUEST_CODE = 9999;
+
+    Place shippingAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +79,36 @@ public class CheckOutActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-        check_out_delivery_address = findViewById(R.id.check_out_delivery_address);
+//        check_out_delivery_address = findViewById(R.id.check_out_delivery_address);
         check_out_delivery_notes = findViewById(R.id.check_out_delivery_notes);
         button_check_out = findViewById(R.id.button_check_out);
 
-        check_out_delivery_address.getText().toString().trim();
+//        check_out_delivery_address.getText().toString().trim();
+        PlaceAutocompleteFragment place_autocomplete_fragment = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+        //Set search icon before fragment
+        place_autocomplete_fragment.getView().findViewById(R.id.place_autocomplete_search_button).setVisibility(View.GONE);
+
+        //Set hint for auto complete
+        ((EditText)place_autocomplete_fragment.getView().findViewById(R.id.place_autocomplete_search_input))
+                .setHint("Insert your address");
+
+        //Set text size
+        ((EditText)place_autocomplete_fragment.getView().findViewById(R.id.place_autocomplete_search_input))
+                .setTextSize(15);
+
+        //Get address from autocomplete
+        place_autocomplete_fragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                shippingAddress = place;
+            }
+
+            @Override
+            public void onError(Status status) {
+                Log.e("Error : ",status.getStatusMessage());
+            }
+        });
 
         //Init Paypal
         final Intent intent = new Intent(this, PayPalService.class);
@@ -103,9 +136,24 @@ public class CheckOutActivity extends AppCompatActivity {
                 startActivityForResult(intent_payment, PAYPAL_REQUEST_CODE);
 
 
+//                //Remove autocomplete address fragment
+//                getSupportFragmentManager().beginTransaction()
+//                        .remove(getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment))
+//                        .commit();
             }
         });
     }
+
+
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//
+//        //Remove autocomplete address fragment
+//        getSupportFragmentManager().beginTransaction()
+//                .remove(getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment))
+//                .commit();
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -121,16 +169,22 @@ public class CheckOutActivity extends AppCompatActivity {
                         OrderRequest orderRequest = new OrderRequest(
                                 Common.currentUser.getUserPhone(),
                                 Common.currentUser.getUserName(),
-                                check_out_delivery_address.getText().toString().trim(),
+
+                                shippingAddress.getAddress().toString().trim(),
 
                                 Common.cart_grand_total_global.replace("RM","").replace(",", ""),
+
+                                "0",
+
                                 Common.cart_sub_total_global.replace("RM","").replace(",", ""),
                                 Common.cart_delivery_charge_global.replace("RM","").replace(",", ""),
                                 Common.cart_others_charge_global.replace("RM","").replace(",", ""),
                                 Common.cart_discount_global.replace("RM","").replace(",", ""),
 
                                 check_out_delivery_notes.getText().toString().trim(),
+
                                 jsonObject.getJSONObject("response").getString("state"), //State from JSON
+                                String.format("%s,%s", shippingAddress.getLatLng().latitude, shippingAddress.getLatLng().longitude),
                                 cart
                         );
 

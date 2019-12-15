@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBJwlXGwdp7zJPS6kCFJrpjZGXYvW1nqzY" />
+
         <activity android:name=".Modules.Account.EditProfileActivity"></activity>
         <activity android:name=".Modules.Account.ProfileActivity" />
         <activity android:name=".Modules.Account.AccountActivity" />

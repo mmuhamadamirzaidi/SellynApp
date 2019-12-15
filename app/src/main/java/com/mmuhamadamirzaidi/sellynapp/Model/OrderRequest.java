@@ -20,23 +20,28 @@ public class OrderRequest {
 
     public String paymentState;
 
+    public String latLng;
+
     public List<Order> product;
 
     public OrderRequest() {
     }
 
-    public OrderRequest(String userPhone, String userName, String userAddress, String grandTotal, String grandSubTotal, String grandDeliveryCharge, String grandOthersCharge, String grandDiscount, String notes, String paymentState, List<Order> product) {
+
+    public OrderRequest(String userPhone, String userName, String userAddress, String grandTotal, String status, String grandSubTotal, String grandDeliveryCharge, String grandOthersCharge, String grandDiscount, String notes, String paymentState, String latLng, List<Order> product) {
         this.userPhone = userPhone;
         this.userName = userName;
         this.userAddress = userAddress;
         this.grandTotal = grandTotal;
-        this.status = "0"; //Default 0:Processing, 1:Shipped, 2:Delivered
+//        this.status = "0"; //Default 0:Processing, 1:Shipped, 2:Delivered
+        this.status = status;
         this.grandSubTotal = grandSubTotal;
         this.grandDeliveryCharge = grandDeliveryCharge;
         this.grandOthersCharge = grandOthersCharge;
         this.grandDiscount = grandDiscount;
         this.notes = notes;
         this.paymentState = paymentState;
+        this.latLng = latLng;
         this.product = product;
     }
 
@@ -120,12 +125,20 @@ public class OrderRequest {
         this.notes = notes;
     }
 
-    public String getpaymentState() {
+    public String getPaymentState() {
         return paymentState;
     }
 
-    public void setpaymentState(String paymentState) {
+    public void setPaymentState(String paymentState) {
         this.paymentState = paymentState;
+    }
+
+    public String getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(String latLng) {
+        this.latLng = latLng;
     }
 
     public List<Order> getProduct() {
