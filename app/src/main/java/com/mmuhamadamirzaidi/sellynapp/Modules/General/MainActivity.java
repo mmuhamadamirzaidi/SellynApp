@@ -194,17 +194,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         swipe_layout_category.setRefreshing(false);
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        fab.setCount(new Database(this).getCountCart());
-//
-//
-//        //Fix back button not display Category
-//        if (adapter != null){
-//            adapter.startListening();
-//        }
-//    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fab.setCount(new Database(this).getCountCart());
+
+
+        //Fix back button not display Category
+        if (adapter != null){
+            adapter.startListening();
+        }
+    }
 
     @Override
     protected void onStop() {

@@ -377,15 +377,15 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         swipe_layout_product_list.setRefreshing(false);
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        //Fix back button not display Category
-//        if (adapter != null){
-//            adapter.startListening();
-//        }
-//    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Fix back button not display Category
+        if (adapter != null){
+            adapter.startListening();
+        }
+    }
 
     @Override
     protected void onStop() {
