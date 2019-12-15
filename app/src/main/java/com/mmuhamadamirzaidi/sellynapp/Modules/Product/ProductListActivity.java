@@ -1,6 +1,7 @@
 package com.mmuhamadamirzaidi.sellynapp.Modules.Product;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,18 +14,22 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Cart.CartActivity;
@@ -37,11 +42,13 @@ import com.mmuhamadamirzaidi.sellynapp.Modules.Account.OrderStatusActivity;
 import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Account.SettingActivity;
 import com.mmuhamadamirzaidi.sellynapp.Modules.General.SignInActivity;
+import com.mmuhamadamirzaidi.sellynapp.ViewHolder.CategoryViewHolder;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 import io.paperdb.Paper;
 
@@ -52,7 +59,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
 
     ImageView product_image;
 
-    TextView product_name, product_notification;
+    TextView product_name;
 
     String categoryId="";
 
@@ -156,6 +163,10 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         header_identity_card = (TextView) headerView.findViewById(R.id.header_identity_card);
         header_profile_image = (ImageView) headerView.findViewById(R.id.header_profile_image);
 
+        //Set product information
+        product_name = (TextView) headerView.findViewById(R.id.product_name);
+        product_image = (ImageView) headerView.findViewById(R.id.product_image);
+
         header_fullname.setText(Common.currentUser.getUserName());
         header_identity_card.setText(Common.currentUser.getUserIdentityCard());
 
@@ -224,20 +235,27 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
 
     private void startSearch(CharSequence text) {
 
-        searchAdapter = new FirebaseRecyclerAdapter<Product, ProductViewHolder>(Product.class, R.layout.item_products, ProductViewHolder.class, product.orderByChild("productName").equalTo(text.toString().trim())) {
+        //Create query by name
+        Query searchByName = product.orderByChild("productName").equalTo(text.toString().trim());
+
+        FirebaseRecyclerOptions<Product> productOptions = new FirebaseRecyclerOptions.Builder<Product>()
+                .setQuery(searchByName, Product.class)
+                .build();
+
+        searchAdapter = new FirebaseRecyclerAdapter<Product, ProductViewHolder>(productOptions) {
             @Override
-            protected void populateViewHolder(ProductViewHolder viewHolder, Product model, int position) {
+            protected void onBindViewHolder(@NonNull ProductViewHolder viewHolder, int position, @NonNull Product model) {
+
                 viewHolder.product_name.setText(model.getProductName());
-                viewHolder.product_notification.setText(model.getNotificationNo());
 
-                Picasso.with(getBaseContext()).load(model.getProductImage()).into(viewHolder.product_image);
+                Picasso.with(getBaseContext()).load(model.getProductImage())
+                        .into(viewHolder.product_image);
 
-                final Product clickItem = model;
+                final Product local = model;
+
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-
-                        Toast.makeText(ProductListActivity.this, "Product Name: "+clickItem.getProductName()+". Notification No: "+clickItem.getNotificationNo(), Toast.LENGTH_SHORT).show();
 
                         Intent product_detail = new Intent(ProductListActivity.this, ProductDetailActivity.class);
                         product_detail.putExtra("productId", searchAdapter.getRef(position).getKey());
@@ -245,7 +263,17 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                     }
                 });
             }
+
+            @NonNull
+            @Override
+            public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+                View itemView = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.item_products, viewGroup, false);
+                return new ProductViewHolder(itemView);
+            }
         };
+        searchAdapter.startListening();
         recycler_product.setAdapter(searchAdapter);
     }
 
@@ -268,9 +296,16 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
     }
 
     private void loadProduct(String categoryId) {
-        adapter = new FirebaseRecyclerAdapter<Product, ProductViewHolder>(Product.class, R.layout.item_products, ProductViewHolder.class, product.orderByChild("categoryId").equalTo(categoryId)) {
+
+        Query searchByName = product.orderByChild("categoryId").equalTo(categoryId);
+
+        FirebaseRecyclerOptions<Product> productOptions = new FirebaseRecyclerOptions.Builder<Product>()
+                .setQuery(searchByName, Product.class)
+                .build();
+
+        adapter = new FirebaseRecyclerAdapter<Product, ProductViewHolder>(productOptions) {
             @Override
-            protected void populateViewHolder(final ProductViewHolder viewHolder, final Product model, final int position) {
+            protected void onBindViewHolder(@NonNull final ProductViewHolder viewHolder, final int position, @NonNull final Product model) {
 
                 viewHolder.product_name.setText(model.getProductName());
                 viewHolder.product_notification.setText(model.getNotificationNo());
@@ -312,9 +347,26 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                     }
                 });
             }
+
+            @NonNull
+            @Override
+            public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                View itemView = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.item_products, viewGroup, false);
+                return new ProductViewHolder(itemView);
+            }
         };
+
+        adapter.startListening();
         recycler_product.setAdapter(adapter);
         swipe_layout_product_list.setRefreshing(false);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+        searchAdapter.stopListening();
     }
 
     @Override

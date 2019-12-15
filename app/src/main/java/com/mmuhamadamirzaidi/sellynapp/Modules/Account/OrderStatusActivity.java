@@ -1,23 +1,30 @@
 package com.mmuhamadamirzaidi.sellynapp.Modules.Account;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.mmuhamadamirzaidi.sellynapp.Common.Common;
 import com.mmuhamadamirzaidi.sellynapp.Interface.ItemClickListener;
 import com.mmuhamadamirzaidi.sellynapp.Model.OrderRequest;
+import com.mmuhamadamirzaidi.sellynapp.Model.Product;
 import com.mmuhamadamirzaidi.sellynapp.R;
 import com.mmuhamadamirzaidi.sellynapp.ViewHolder.OrderViewHolder;
+import com.mmuhamadamirzaidi.sellynapp.ViewHolder.ProductViewHolder;
 
 public class OrderStatusActivity extends AppCompatActivity {
 
@@ -72,11 +79,16 @@ public class OrderStatusActivity extends AppCompatActivity {
 
     private void loadOrder(String userPhone) {
 
-        adapter = new FirebaseRecyclerAdapter<OrderRequest, OrderViewHolder>(OrderRequest.class, R.layout.item_order, OrderViewHolder.class, orderrequest.orderByChild("userPhone")) {
+        Query getOrderByUser = orderrequest.orderByChild("userPhone")
+                .equalTo(userPhone);
+
+        FirebaseRecyclerOptions<OrderRequest> orderOptions = new FirebaseRecyclerOptions.Builder<OrderRequest>()
+                .setQuery(getOrderByUser, OrderRequest.class)
+                .build();
+
+        adapter = new FirebaseRecyclerAdapter<OrderRequest, OrderViewHolder>(orderOptions) {
             @Override
-            protected void populateViewHolder(final OrderViewHolder viewHolder, final OrderRequest model, int position) {
-
-
+            protected void onBindViewHolder(@NonNull OrderViewHolder viewHolder, int position, @NonNull final OrderRequest model) {
 
                 viewHolder.item_order_id.setText(adapter.getRef(position).getKey());
 //                viewHolder.item_order_date.setText(model.);
@@ -101,10 +113,6 @@ public class OrderStatusActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
-//                        viewHolder.item_order_edit.setVisibility(View.VISIBLE);
-//                        viewHolder.item_order_edit_new.setVisibility(View.GONE);
-//                        viewHolder.item_order_edit_layout.setVisibility(View.GONE);
-//                        viewHolder.item_order_edit_layout.setVisibility(View.GONE);
 
                         Toast.makeText(OrderStatusActivity.this, "Order Id: "+adapter.getRef(position).getKey(), Toast.LENGTH_SHORT).show();
 
@@ -133,50 +141,24 @@ public class OrderStatusActivity extends AppCompatActivity {
                     }
                 });
 
-//                viewHolder.item_order_edit.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        viewHolder.item_order_edit.setVisibility(View.GONE);
-//                        viewHolder.item_order_edit_new.setVisibility(View.VISIBLE);
-//                        viewHolder.item_order_edit_layout.setVisibility(View.VISIBLE);
-//
-//                        viewHolder.item_order_test_edit.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                                Toast.makeText(OrderStatusActivity.this, "Test Edit", Toast.LENGTH_SHORT).show();
-//                                viewHolder.item_order_edit.setVisibility(View.VISIBLE);
-//                                viewHolder.item_order_edit_new.setVisibility(View.GONE);
-//                                viewHolder.item_order_edit_layout.setVisibility(View.GONE);
-//                            }
-//                        });
-//                    }
-//                });
-//
-//                viewHolder.item_order_edit_new.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//
-//                        viewHolder.item_order_edit.setVisibility(View.VISIBLE);
-//                        viewHolder.item_order_edit_new.setVisibility(View.GONE);
-//                        viewHolder.item_order_edit_layout.setVisibility(View.GONE);
-//
-//                        viewHolder.item_order_test_edit.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                                Toast.makeText(OrderStatusActivity.this, "Test Edit", Toast.LENGTH_SHORT).show();
-//                                viewHolder.item_order_edit.setVisibility(View.VISIBLE);
-//                                viewHolder.item_order_edit_new.setVisibility(View.GONE);
-//                                viewHolder.item_order_edit_layout.setVisibility(View.GONE);
-//                            }
-//                        });
-//                    }
-//                });
+            }
 
+            @NonNull
+            @Override
+            public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                View itemView = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.item_products, viewGroup, false);
+                return new OrderViewHolder(itemView);
             }
         };
+        adapter.startListening();
         recycler_order.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     private String convertCodeToStatus(String status) {

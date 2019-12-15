@@ -20,8 +20,6 @@
         <activity android:name=".Modules.Cart.CartActivity" />
         <activity android:name=".Modules.Product.ProductDetailActivity" />
         <activity android:name=".Modules.Product.ProductListActivity" />
-        <activity android:name=".HolderListActivity" />
-        <activity android:name=".HolderDetailActivity" />
         <activity
             android:name=".Modules.General.MainActivity"
             android:label="@string/title_activity_main"

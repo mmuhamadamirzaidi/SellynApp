@@ -2,12 +2,14 @@ package com.mmuhamadamirzaidi.sellynapp.Modules.General;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -17,11 +19,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.sellynapp.Modules.Account.AccountActivity;
@@ -146,9 +150,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void loadCategory() {
 
-        adapter = new FirebaseRecyclerAdapter<Category, CategoryViewHolder>(Category.class, R.layout.item_category, CategoryViewHolder.class, category) {
+        FirebaseRecyclerOptions <Category> options = new FirebaseRecyclerOptions.Builder<Category>()
+                .setQuery(category, Category.class)
+                .build();
+
+        adapter = new FirebaseRecyclerAdapter<Category, CategoryViewHolder>(options) {
             @Override
-            protected void populateViewHolder(CategoryViewHolder viewHolder, Category model, int position) {
+            protected void onBindViewHolder(@NonNull CategoryViewHolder viewHolder, int position, @NonNull Category model) {
+
                 viewHolder.category_name.setText(model.getName());
 
                 Picasso.with(getBaseContext()).load(model.getImage()).into(viewHolder.category_image);
@@ -165,9 +174,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
             }
+
+            @NonNull
+            @Override
+            public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                View itemView = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.item_category, viewGroup, false);
+                return new CategoryViewHolder(itemView);
+            }
         };
+        adapter.startListening();
         recycler_category.setAdapter(adapter);
         swipe_layout_category.setRefreshing(false);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     @Override
