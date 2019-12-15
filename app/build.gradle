@@ -50,6 +50,9 @@ dependencies {
     //PayPal Library
     implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 
+    //CounterFAB
+    implementation 'com.github.andremion:counterfab:1.0.1'
+
     //Others Library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
