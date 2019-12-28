@@ -155,6 +155,16 @@ public class OrderStatusActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Fix back button not display Category
+        if (adapter != null) {
+            adapter.startListening();
+        }
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
