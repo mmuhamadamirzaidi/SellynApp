@@ -2,18 +2,17 @@ package com.mmuhamadamirzaidi.sellynapp.Model;
 
 public class Product {
 
-    private String productName, productImage, productDescription, productPrice, productDiscount, productHolder, notificationNo, categoryId;
+    private String productName, productImage, productDescription, productPrice, productDiscount, notificationNo, categoryId;
 
     public Product() {
     }
 
-    public Product(String productName, String productImage, String productDescription, String productPrice, String productDiscount, String productHolder, String notificationNo, String categoryId) {
+    public Product(String productName, String productImage, String productDescription, String productPrice, String productDiscount, String notificationNo, String categoryId) {
         this.productName = productName;
         this.productImage = productImage;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
         this.productDiscount = productDiscount;
-        this.productHolder = productHolder;
         this.notificationNo = notificationNo;
         this.categoryId = categoryId;
     }
@@ -56,14 +55,6 @@ public class Product {
 
     public void setProductDiscount(String productDiscount) {
         this.productDiscount = productDiscount;
-    }
-
-    public String getProductHolder() {
-        return productHolder;
-    }
-
-    public void setProductHolder(String productHolder) {
-        this.productHolder = productHolder;
     }
 
     public String getNotificationNo() {

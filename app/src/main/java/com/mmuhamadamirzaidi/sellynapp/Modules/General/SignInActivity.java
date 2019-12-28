@@ -45,11 +45,11 @@ public class SignInActivity extends AppCompatActivity {
 
         // Hide the Status Bar and the Navigation Bar
 
-        View overlay = findViewById(R.id.activity_sign_in);
-
-        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_FULLSCREEN);
+//        View overlay = findViewById(R.id.activity_sign_in);
+//
+//        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         sign_in_phone = findViewById(R.id.sign_in_phone);
         sign_in_password = findViewById(R.id.sign_in_password);

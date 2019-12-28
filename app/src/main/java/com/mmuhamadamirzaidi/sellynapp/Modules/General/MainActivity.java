@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Init Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
         category = database.getReference("Category");
 
         fab = findViewById(R.id.fab);

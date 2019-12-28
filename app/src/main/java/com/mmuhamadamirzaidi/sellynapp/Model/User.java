@@ -13,9 +13,11 @@ public class User {
         this.userPhone = userPhone;
         this.userAddress = userAddress;
         this.userImage = userImage;
-        this.isStaff = isStaff;
+        this.isStaff = "false";
         this.userSecureCode = userSecureCode;
         this.userHolderId = userHolderId;
+
+        //Can hard code here to set value
     }
 
     public String getUserName() {

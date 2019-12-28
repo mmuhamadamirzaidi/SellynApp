@@ -89,18 +89,20 @@
                 android:layout_height="wrap_content" >
 
                 <RadioButton
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:shadowColor="@color/colorPrimaryDark"
-                    android:textSize="15sp"
-                    android:textColor="@color/textColorAccent"
+                    android:id="@+id/radioCurrent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
                     android:layout_marginEnd="11dp"
+                    android:buttonTint="@color/colorPrimaryDark"
                     android:fontFamily="@font/mr"
+                    android:shadowColor="@color/colorPrimaryDark"
                     android:text="Current Location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/textColorAccent"
+                    android:textSize="15sp" />
 
                 <RadioButton
+                    android:id="@+id/radioHome"
                     android:buttonTint="@color/colorPrimaryDark"
                     android:textSize="15sp"
                     android:textColor="@color/textColorAccent"
