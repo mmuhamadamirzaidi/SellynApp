@@ -113,7 +113,6 @@ public class OrderStatusActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
-
                         Toast.makeText(OrderStatusActivity.this, "Order Id: "+adapter.getRef(position).getKey(), Toast.LENGTH_SHORT).show();
 
                         Intent order_detail = new Intent(OrderStatusActivity.this, OrderDetailActivity.class);
@@ -147,7 +146,7 @@ public class OrderStatusActivity extends AppCompatActivity {
             @Override
             public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                 View itemView = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.item_products, viewGroup, false);
+                        .inflate(R.layout.item_order, viewGroup, false);
                 return new OrderViewHolder(itemView);
             }
         };

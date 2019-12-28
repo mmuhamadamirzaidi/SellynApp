@@ -4,25 +4,25 @@ import java.util.List;
 
 public class OrderRequest {
 
-    public String userPhone;
-    public String userName;
-    public String userAddress;
-    public String grandTotal;
+    private String userPhone;
+    private String userName;
+    private String userAddress;
+    private String grandTotal;
 
     public String status;
 
-    public String grandSubTotal;
-    public String grandDeliveryCharge;
-    public String grandOthersCharge;
-    public String grandDiscount;
+    private String grandSubTotal;
+    private String grandDeliveryCharge;
+    private String grandOthersCharge;
+    private String grandDiscount;
 
-    public String notes;
+    private String notes;
 
-    public String paymentState;
+    private String paymentState;
 
-    public String latLng;
+    private String latLng;
 
-    public List<Order> product;
+    private List<Order> product;
 
     public OrderRequest() {
     }
