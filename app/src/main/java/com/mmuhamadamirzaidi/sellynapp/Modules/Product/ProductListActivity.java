@@ -53,7 +53,7 @@ import java.util.Queue;
 
 import io.paperdb.Paper;
 
-public class ProductListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class ProductListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseDatabase database;
     DatabaseReference product;
@@ -61,7 +61,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
     ImageView product_image;
     TextView product_name;
 
-    String categoryId="";
+    String categoryId = "";
 
     RecyclerView recycler_product;
     RecyclerView.LayoutManager layoutManager;
@@ -114,15 +114,14 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
             @Override
             public void onRefresh() {
                 // Get CategoryId intent
-                if (getIntent() != null){
+                if (getIntent() != null) {
                     categoryId = getIntent().getStringExtra("categoryId");
                 }
-                if (!categoryId.isEmpty() && categoryId != null){
+                if (!categoryId.isEmpty() && categoryId != null) {
 
-                    if (Common.isConnectedToInternet(getBaseContext())){
+                    if (Common.isConnectedToInternet(getBaseContext())) {
                         loadProduct(categoryId);
-                    }
-                    else{
+                    } else {
                         Toast.makeText(ProductListActivity.this, "Please check Internet connection!", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -133,15 +132,14 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
             @Override
             public void run() {
                 // Get CategoryId intent
-                if (getIntent() != null){
+                if (getIntent() != null) {
                     categoryId = getIntent().getStringExtra("categoryId");
                 }
-                if (!categoryId.isEmpty() && categoryId != null){
+                if (!categoryId.isEmpty() && categoryId != null) {
 
-                    if (Common.isConnectedToInternet(getBaseContext())){
+                    if (Common.isConnectedToInternet(getBaseContext())) {
                         loadProduct(categoryId);
-                    }
-                    else{
+                    } else {
                         Toast.makeText(ProductListActivity.this, "Please check Internet connection!", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -164,7 +162,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
 
                         //When search bar typing
                         List<String> suggest = new ArrayList<String>();
-                        for (String search:suggestionList){
+                        for (String search : suggestionList) {
                             if (search.toLowerCase().contains(product_list_search_bar.getText().toLowerCase().trim()))
                                 suggest.add(search);
                         }
@@ -272,7 +270,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                 return new ProductViewHolder(itemView);
             }
         };
-//        searchAdapter.startListening();
+        searchAdapter.startListening();
         recycler_product.setAdapter(searchAdapter);
     }
 
@@ -281,7 +279,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         product.orderByChild("categoryId").equalTo(categoryId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     Product item = dataSnapshot1.getValue(Product.class);
                     suggestionList.add(item.getProductName());
                 }
@@ -338,15 +336,14 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                 viewHolder.product_wishlist.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!wishlistDB.currentWishlist(adapter.getRef(position).getKey())){
+                        if (!wishlistDB.currentWishlist(adapter.getRef(position).getKey())) {
                             wishlistDB.addToWishlist(adapter.getRef(position).getKey());
                             viewHolder.product_wishlist.setImageResource(R.drawable.ic_bookmark_primary_dark_24dp);
-                            Toast.makeText(ProductListActivity.this, model.getProductName()+" added to wishlist!", Toast.LENGTH_SHORT).show();
-                        }
-                        else{
+                            Toast.makeText(ProductListActivity.this, model.getProductName() + " added to wishlist!", Toast.LENGTH_SHORT).show();
+                        } else {
                             wishlistDB.clearWishlist(adapter.getRef(position).getKey());
                             viewHolder.product_wishlist.setImageResource(R.drawable.ic_bookmark_border_primary_dark_24dp);
-                            Toast.makeText(ProductListActivity.this, model.getProductName()+" removed from wishlist!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProductListActivity.this, model.getProductName() + " removed from wishlist!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -356,7 +353,7 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
-                        Toast.makeText(ProductListActivity.this, "Product Name: "+clickItem.getProductName()+". Notification No: "+clickItem.getNotificationNo(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProductListActivity.this, "Product Name: " + clickItem.getProductName() + ". Notification No: " + clickItem.getNotificationNo(), Toast.LENGTH_SHORT).show();
 
                         Intent product_detail = new Intent(ProductListActivity.this, ProductDetailActivity.class);
                         product_detail.putExtra("productId", adapter.getRef(position).getKey());
@@ -385,8 +382,12 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         super.onResume();
 
         //Fix back button not display Category
-        if (adapter != null){
+        if (adapter != null) {
             adapter.startListening();
+        }
+
+        if (searchAdapter != null){
+            searchAdapter.startListening();
         }
     }
 
@@ -394,7 +395,9 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
-//        searchAdapter.stopListening();
+        if (searchAdapter != null) {
+            searchAdapter.stopListening();
+        }
     }
 
     @Override
@@ -464,16 +467,16 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
 
             Toast.makeText(ProductListActivity.this, "News", Toast.LENGTH_SHORT).show();
 
-        }else if (id == R.id.nav_account) {
+        } else if (id == R.id.nav_account) {
 
             Toast.makeText(ProductListActivity.this, "Account", Toast.LENGTH_SHORT).show();
 
-        }else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_settings) {
 
             Intent settingIntent = new Intent(ProductListActivity.this, SettingActivity.class);
             startActivity(settingIntent);
 
-        }else if (id == R.id.nav_sign_out) {
+        } else if (id == R.id.nav_sign_out) {
 
             //Forget user information
             Paper.book().destroy();
