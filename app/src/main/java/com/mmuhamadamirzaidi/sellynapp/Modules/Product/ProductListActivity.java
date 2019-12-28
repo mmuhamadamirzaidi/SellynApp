@@ -145,6 +145,57 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                         Toast.makeText(ProductListActivity.this, "Please check Internet connection!", Toast.LENGTH_SHORT).show();
                     }
                 }
+
+                // Search
+
+                product_list_search_bar = (MaterialSearchBar) findViewById(R.id.product_list_search_bar);
+                product_list_search_bar.setHint("Search the products...");
+
+                loadSuggestion();
+
+                product_list_search_bar.addTextChangeListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                        //When search bar typing
+                        List<String> suggest = new ArrayList<String>();
+                        for (String search:suggestionList){
+                            if (search.toLowerCase().contains(product_list_search_bar.getText().toLowerCase().trim()))
+                                suggest.add(search);
+                        }
+                        product_list_search_bar.setLastSuggestions(suggest);
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
+                product_list_search_bar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
+                    @Override
+                    public void onSearchStateChanged(boolean enabled) {
+                        //When search bar closed, restore original list
+                        if (!enabled)
+                            recycler_product.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onSearchConfirmed(CharSequence text) {
+                        //When finish. show result
+                        startSearch(text);
+                    }
+
+                    @Override
+                    public void onButtonClicked(int buttonCode) {
+
+                    }
+                });
             }
         });
 
@@ -179,56 +230,6 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
         layoutManager = new LinearLayoutManager(this);
         recycler_product.setLayoutManager(layoutManager);
 
-        product_list_search_bar = (MaterialSearchBar) findViewById(R.id.product_list_search_bar);
-        product_list_search_bar.setHint("Search the products...");
-
-        loadSuggestion();
-
-        product_list_search_bar.setLastSuggestions(suggestionList);
-        product_list_search_bar.addTextChangeListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                //When search bar typing
-                List<String> suggest = new ArrayList<String>();
-                for (String search:suggestionList){
-                    if (search.toLowerCase().contains(product_list_search_bar.getText().toLowerCase().trim()))
-                        suggest.add(search);
-                }
-                product_list_search_bar.setLastSuggestions(suggest);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        product_list_search_bar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
-            @Override
-            public void onSearchStateChanged(boolean enabled) {
-                //When search bar closed, restore original list
-                if (!enabled)
-                    recycler_product.setAdapter(adapter);
-            }
-
-            @Override
-            public void onSearchConfirmed(CharSequence text) {
-                //When finish. show result
-                startSearch(text);
-            }
-
-            @Override
-            public void onButtonClicked(int buttonCode) {
-
-            }
-        });
     }
 
     private void startSearch(CharSequence text) {
@@ -284,6 +285,8 @@ public class ProductListActivity extends AppCompatActivity implements Navigation
                     Product item = dataSnapshot1.getValue(Product.class);
                     suggestionList.add(item.getProductName());
                 }
+
+                product_list_search_bar.setLastSuggestions(suggestionList);
             }
 
             @Override
