@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        // Can put back icon here
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/product_detail_toolbar"
             android:layout_width="match_parent"
@@ -31,6 +33,9 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:theme="@style/ToolbarTheme" />
+
+            // Can put any menu icon here
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
@@ -255,49 +260,6 @@
 
                 <TextView
                     android:id="@+id/detail_product_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ml"
-                    android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
-                    android:textColor="@color/textColorPrimary" />
-
-
-            </LinearLayout>
-
-            // Allergens
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingTop="30dp"
-                android:paddingRight="10dp"
-                android:weightSum="10">
-
-                <TextView
-                    android:id="@+id/detail_allergens_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:fontFamily="@font/mm"
-                    android:text="Substances/Ingredients"
-                    android:textColor="@color/textColorPrimaryDark"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:paddingRight="8dp"
-                android:paddingBottom="10dp">
-
-                <TextView
-                    android:id="@+id/detail_product_allergens"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ml"
